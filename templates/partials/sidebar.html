@@ -1,0 +1,64 @@
+{% load static %}
+{% block sidebar %}
+		<!-- ========== Left Sidebar Start ========== -->
+		<div class="vertical-menu">
+			<div data-simplebar class="h-100">
+				<!--- Sidemenu -->
+				<div id="sidebar-menu">
+					<!-- Left Menu Start -->
+					<ul class="metismenu list-unstyled" id="side-menu">
+						<li class="menu-title" key="t-menu">Menu</li>
+						<li>
+							<a href="{% url 'dashboard' %}" class="waves-effect"> <i class="ri-dashboard-line"></i>
+								<!-- <span class="badge rounded-pill bg-success float-end">3</span> -->
+								<span key="t-dashboards">Dashboard</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript: void(0);" class="has-arrow waves-effect"> <i class="ri-table-2"></i>
+								<span key="t-tables">Data Set</span>
+							</a>
+							<ul class="sub-menu" aria-expanded="false">
+								<li><a href="{% url 'parcel-type' %}" key="t-basic-tables" >Type View</a>
+								</li>
+								<li><a href="{% url 'new-parcel-type' %}" key="t-data-tables" >New Type</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript: void(0);" class="has-arrow waves-effect"> <i class="ri-artboard-2-line"></i>
+								<span key="t-stock">Booking</span>
+							</a>
+							<ul class="sub-menu" aria-expanded="false">
+								<li><a href="{% url 'parcel-list' %}"key="t-products">Parcel List</a>
+								</li>
+								<li><a href="{% url 'new-parcel' %}"key="t-low">New Parcel</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="{% url 'calendar' %}" class=" waves-effect"> <i class="ri-calendar-2-line"></i>
+								<span key="t-calendar" >Calendar</span>
+							</a>
+						</li>
+
+						<li class="menu-title" key="t-pages">Pages</li>
+						<li>
+							<a href="javascript: void(0);" class="has-arrow waves-effect"> <i class="ri-account-circle-line"></i>
+								<span key="t-authentication"> Authentication</span>
+							</a>
+							<ul class="sub-menu" aria-expanded="false">
+								<li><a href="{% url 'register'%}" key="n-register" >Register new</a>
+								</li>
+								<li><a href="{% url 'auth-lock-screen' %}" key="t-lock-screen" >Lock Screen</a>
+								</li>
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+				<!-- Sidebar -->
+			</div>
+		</div>
+		<!-- Left Sidebar End -->
+{% endblock sidebar %}

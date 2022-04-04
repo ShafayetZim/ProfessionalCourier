@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px dotted red;
+  border-collapse: collapse;
+}
+th, td {
+  font-size: 14px;
+  padding-top: 5px;
+}
+th {
+    background-color: red;
+    text-align: right;
+    color: white;
+    padding-right: 1px;
+    width: 18%;
+}
+td {
+    text-align: left;
+    width: 32%;
+    padding-left: 3px;
+}
+#div1 {
+    height:20px;
+}
+#div2 {
+    height:20px;
+}
+#div3 {
+    height:20px;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div id="div1">
+<div class="center" style="text-align: left;">
+
+    <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
+        <tbody>
+        <tr style="border-style: hidden;">
+           <th style="width: 34.33%;  height:80px;"><img class="" src="../static/images/pdf-logo.png" alt="Header Avatar" width="700" height="100"></th>
+            <th style="width: 30.67%;  height:80px; font-size:10px; text-align: justify; padding-left:2px;">KA-74/1, Progati Sarani, Kuril Chowrasta, Vatara, Dhaka-1229.
+                Tel : 88-02-8411515 / 02-8411575, Mob : 01708-388733, E-mail : info@tpc-bd.org Web : www.tpc-bd.org</th>
+            <td class="cropped" style="width: 35%;  height:80px; overflow:hidden; text-align: center; border-left: 1px solid white;"><img src="{{parcel.barcode.path}}" alt="" height="150%" style="width: 300px;" /></td>
+
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<div  style="padding-top: 10px">
+
+    <caption><span style="color:red; text-align:center; font-size: 14px;"><strong>POD COPY</strong></span></caption>
+
+    <table id="1" style="width:100%">
+      <tr>
+        <th style="border-bottom: 3pt solid white;">FROM:</th>
+        <td>{{ parcel.district }}</td>
+        <th style="border-bottom: 3pt solid white;">TO:</th>
+        <td>{{ parcel.dis }}</td>
+      </tr>
+      <tr>
+        <th style="border-bottom: 3pt solid white;">BOOKING PLACE:</th>
+        <td>{{ parcel.sub }}</td>
+        <th style="border-bottom: 3pt solid white;">DELIVERY PLACE:</th>
+        <td>{{ parcel.tha }}</td>
+      </tr>
+      <tr>
+        <th style="border-bottom: 3pt solid white;">BOOKING DATE:</th>
+        <td>{{parcel.date}}</td>
+        <th style="border-bottom: 3pt solid white;">BOOKED BY:</th>
+        <td>{{parcel.author}}</td>
+      </tr>
+
+        <tr>
+        <th style="border-bottom: 3pt solid white;">NAME:</th>
+        <td> {{ parcel.name }}</td>
+        <th style="border-bottom: 3pt solid white;">NAME:</th>
+        <td>{{ parcel.receiver }}</td>
+      </tr>
+      <tr>
+        <th style="border-bottom: 3pt solid white;">ADDRESS:</th>
+        <td>{{ parcel.s_village }}</td>
+        <th style="border-bottom: 3pt solid white;">ADDRESS:</th>
+        <td>{{ parcel.r_village }}</td>
+      </tr>
+        <tr>
+        <th style="border-bottom: 3pt solid white;">MOBILE NO:</th>
+        <td>{{ parcel.s_phone }}</td>
+        <th style="border-bottom: 3pt solid white;">MOBILE NO:</th>
+        <td>{{ parcel.r_phone }}</td>
+      </tr>
+      <tr>
+        <th>NID:</th>
+        <td>{{ parcel.nid }}</td>
+        <th>REF-</th>
+        <td>{{parcel.reference}}</td>
+      </tr>
+    </table>
+
+</div>
+</br>
+
+
+<div>
+    <table id="3" style="width:100%">
+  <tr>
+    <th style="text-align: center; width: 15%; padding-right: 0px;">QUANTITY</th>
+    <th style="text-align: center; width: 55%; padding-right: 0px;">DESCRIPTION</th>
+    <th style="text-align: center; width: 15%; padding-right: 0px;">UNIT PRICE</th>
+    <th style="text-align: center; width: 15%; padding-right: 0px;">AMOUNT</th>
+  </tr>
+  <tr>
+    <td>{{ parcel.quantity }}</td>
+    <td>{{parcel.type}}</td>
+    <td>{{parcel.price}}</td>
+    <td>{{parcel.total}}</td>
+  </tr>
+
+</table>
+</div>
+<br>
+
+<div>
+    <table id="4" style="width:100%">
+        <tr>
+        <th style="width:27%; padding-right: 0px;">RECEIVER'S NAME & DATE:</th>
+        <td style="width:36%;"></td>
+        <th style="width:12%; padding-right: 0px;">MOBILE NO:</th>
+        <td style="width:25%;"></td>
+      </tr>
+</table>
+</div>
+
+</div>
+
+<p>--------------------------------------------------- &#9986;
+   -------------------------------------------------- &#9986;
+   -------------------------------------------------- &#9986;
+   --------------------------------------------------</p>
+
+
+<!--Customer copy-->
+
+<div id="div2">
+<div class="center" style="text-align: left;">
+
+    <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
+        <tbody>
+        <tr style="border-style: hidden;">
+            <th style="width: 34.33%;  height:80px;"><img class="" src="../static/images/pdf-logo.png" alt="Header Avatar" width="700" height="100"></th>
+            <th style="width: 30.67%;  height:80px; font-size:10px; text-align: justify; padding-left:2px;">KA-74/1, Progati Sarani, Kuril Chowrasta, Vatara, Dhaka-1229.
+                Tel : 88-02-8411515 / 02-8411575, Mob : 01708-388733, E-mail : info@tpc-bd.org Web : www.tpc-bd.org</th>
+            <td style="width: 35%;  height:80px; text-align: center; border-left: 1px solid white;"><img src="{{parcel.barcode.path}}" alt="" height="150%" style="width: 300px;" /></td>
+
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<div  style="padding-top: 10px">
+
+    <caption><span style="color:red; text-align:center; font-size: 14px;"><strong>CUSTOMER COPY</strong></span></caption>
+
+    <table id="11" style="width:100%">
+      <tr>
+        <th style="border-bottom: 3pt solid white;">FROM:</th>
+        <td>{{ parcel.district }}</td>
+        <th style="border-bottom: 3pt solid white;">TO:</th>
+        <td>{{ parcel.dis }}</td>
+      </tr>
+      <tr>
+        <th style="border-bottom: 3pt solid white;">BOOKING PLACE:</th>
+        <td>{{ parcel.sub }}</td>
+        <th style="border-bottom: 3pt solid white;">DELIVERY PLACE:</th>
+        <td>{{ parcel.tha }}</td>
+      </tr>
+      <tr>
+        <th style="border-bottom: 3pt solid white;">BOOKING DATE:</th>
+        <td>{{parcel.date}}</td>
+        <th style="border-bottom: 3pt solid white;">BOOKED BY:</th>
+        <td>{{parcel.author}}</td>
+      </tr>
+         <tr>
+        <th style="border-bottom: 3pt solid white;">NAME:</th>
+        <td> {{ parcel.name }}</td>
+        <th style="border-bottom: 3pt solid white;">NAME:</th>
+        <td>{{ parcel.receiver }}</td>
+      </tr>
+      <tr>
+        <th style="border-bottom: 3pt solid white;">ADDRESS:</th>
+        <td>{{ parcel.s_village }}</td>
+        <th style="border-bottom: 3pt solid white;">ADDRESS:</th>
+        <td>{{ parcel.r_village }}</td>
+      </tr>
+        <tr>
+        <th style="border-bottom: 3pt solid white;">MOBILE NO:</th>
+        <td>{{ parcel.s_phone }}</td>
+        <th style="border-bottom: 3pt solid white;">MOBILE NO:</th>
+        <td>{{ parcel.r_phone }}</td>
+      </tr>
+      <tr>
+        <th>NID:</th>
+        <td>{{ parcel.nid }}</td>
+        <th>REF-</th>
+        <td>{{parcel.reference}}</td>
+      </tr>
+    </table>
+
+</div>
+</br>
+
+
+<div>
+    <table id="13" style="width:100%">
+  <tr>
+    <th style="text-align: center; width: 15%; padding-right: 0px;">QUANTITY</th>
+    <th style="text-align: center; width: 55%; padding-right: 0px;">DESCRIPTION</th>
+    <th style="text-align: center; width: 15%; padding-right: 0px;">UNIT PRICE</th>
+    <th style="text-align: center; width: 15%; padding-right: 0px;">AMOUNT</th>
+  </tr>
+  <tr>
+    <td>{{ parcel.quantity }}</td>
+    <td>{{parcel.type}}</td>
+    <td>{{parcel.price}}</td>
+    <td>{{parcel.total}}</td>
+  </tr>
+
+</table>
+</div>
+
+</div>
+
+<p>-------------------------------------------------- &#9986;
+   -------------------------------------------------- &#9986;
+   -------------------------------------------------- &#9986;
+   --------------------------------------------------</p>
+
+<!--Office copy-->
+
+<div id="div3">
+<div class="center" style="text-align: left;">
+
+    <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
+        <tbody>
+       <tr style="border-style: hidden;">
+            <th style="width: 34.33%;  height:79px;"><img class="" src="../static/images/pdf-logo.png" alt="Header Avatar" width="700" height="100"></th>
+            <th style="width: 30.67%;  height:79px; font-size:10px; text-align: justify; padding-left:2px;">KA-74/1, Progati Sarani, Kuril Chowrasta, Vatara, Dhaka-1229.
+                Tel : 88-02-8411515 / 02-8411575, Mob : 01708-388733, E-mail : info@tpc-bd.org Web : www.tpc-bd.org</th>
+            <td style="width: 35%;  height:79px; text-align: center; border-left: 1px solid white;"><img src="{{parcel.barcode.path}}" alt="" height="150%" style="width: 300px;" /></td>
+
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<div  style="padding-top: 10px">
+
+    <caption><span style="color:red; text-align:center; font-size: 14px;"><strong>OFFICE COPY</strong></span></caption>
+
+    <table id="21" style="width:100%">
+      <tr>
+        <th style="border-bottom: 3pt solid white;">FROM:</th>
+        <td>{{ parcel.district }}</td>
+        <th style="border-bottom: 3pt solid white;">TO:</th>
+        <td>{{ parcel.dis }}</td>
+      </tr>
+      <tr>
+        <th style="border-bottom: 3pt solid white;">BOOKING PLACE:</th>
+        <td>{{ parcel.sub }}</td>
+        <th style="border-bottom: 3pt solid white;">DELIVERY PLACE:</th>
+        <td>{{ parcel.tha }}</td>
+      </tr>
+      <tr>
+        <th style="border-bottom: 3pt solid white;">BOOKING DATE:</th>
+        <td>{{parcel.date}}</td>
+        <th style="border-bottom: 3pt solid white;">BOOKED BY:</th>
+        <td>{{parcel.author}}</td>
+      </tr>
+        <tr>
+        <th style="border-bottom: 3pt solid white;">NAME:</th>
+        <td> {{parcel.name}}</td>
+        <th style="border-bottom: 3pt solid white;">NAME:</th>
+        <td>{{parcel.receiver}}</td>
+      </tr>
+      <tr>
+        <th style="border-bottom: 3pt solid white;">ADDRESS:</th>
+        <td>{{ parcel.s_village }}</td>
+        <th style="border-bottom: 3pt solid white;">ADDRESS:</th>
+        <td>{{ parcel.r_village }}</td>
+      </tr>
+        <tr>
+        <th style="border-bottom: 3pt solid white;">MOBILE NO:</th>
+        <td>{{ parcel.s_phone }}</td>
+        <th style="border-bottom: 3pt solid white;">MOBILE NO:</th>
+        <td>{{ parcel.r_phone }}</td>
+      </tr>
+      <tr>
+        <th>NID:</th>
+        <td>{{ parcel.nid }}</td>
+        <th>REF-</th>
+        <td>{{parcel.reference}}</td>
+      </tr>
+    </table>
+
+</div>
+</br>
+    
+
+<div>
+    <table id="23" style="width:100%">
+  <tr>
+    <th style="text-align: center; width: 15%; padding-right: 0px;">QUANTITY</th>
+    <th style="text-align: center; width: 55%; padding-right: 0px;">DESCRIPTION</th>
+    <th style="text-align: center; width: 15%; padding-right: 0px;">UNIT PRICE</th>
+    <th style="text-align: center; width: 15%; padding-right: 0px;">AMOUNT</th>
+  </tr>
+  <tr>
+    <td>{{ parcel.quantity }}</td>
+    <td>{{ parcel.type }}</td>
+    <td>{{ parcel.price }}</td>
+    <td>{{ parcel.total }}</td>
+  </tr>
+
+</table>
+</div>
+
+</div>
+
+
+
+</body>
+</html>

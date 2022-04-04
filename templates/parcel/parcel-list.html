@@ -1,0 +1,155 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+
+        <!-- DataTables -->
+        <link href="{% static 'libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'libs/datatables.net-select-bs4/css//select.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+
+        <!-- Responsive datatable examples -->
+        <link href="{% static 'libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock extra_css %}
+
+{% block content %}
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="">
+                                            <a href="{% url 'new-parcel' %}" class="btn btn-danger mb-3"><i class="mdi mdi-plus me-2"></i> New Parcel</a>
+                                        </div>
+
+                                        <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <thead>
+                                            <tr>
+                                                <th>SL</th>
+                                                <th>Date</th>
+                                                <th>Order No</th>
+                                                <th>Receiver</th>
+                                                <th>Phone</th>
+                                                <th>Type</th>
+                                                <th>Track</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for item in parcel %}
+                                            <tr>
+                                                <td>{{ forloop.counter}}</td>
+                                                <td>{{ item.date }}</td>
+                                                <td>{{ item.order_no }}</td>
+                                                <td>{{ item.receiver }}</td>
+                                                <td>{{ item.r_phone }}</td>
+                                                <td>{{ item.type }}</td>
+                                                <td>{{ item.get_tracking_display }}</td>
+                                                <td style="">
+                                                            <a href="{% url 'edit-parcel' item.order_no %}">
+                                                                <button class="btn btn-outline-info" title="Edit">
+                                                                    <i class="fas fa-pencil-alt"></i>
+                                                                </button>
+                                                            </a>
+
+                                                                <button class="btn btn-outline-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#composemodal{{item.order_no}}">
+                                                                    <i class="mdi mdi-trash-can"></i>
+                                                                </button>
+
+
+                                                            <a href="{% url 'track-parcel' item.order_no %}">
+                                                                <button class="btn btn-outline-primary" title="Track Parcel">
+                                                                    <i class="fas fa-truck-moving"></i>
+                                                                </button>
+                                                            </a>
+                                                            <a href="{% url 'print-invoice' order_no=item.order_no %}">
+                                                                <button class="btn btn-outline-info" title="Print Invoice">
+                                                                    <i class="fas fa-file-pdf"></i>
+                                                                </button>
+                                                            </a>
+
+                                                    <!-- Modal -->
+                                                        <div class="modal fade" id="composemodal{{item.order_no}}" tabindex="-1" role="dialog" aria-labelledby="composemodalTitle" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="composemodalTitle">Delete Invoice</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <h5 class="text-center p-2">Invoice: {{item.order_no}}</h5>
+                                                                        <p class="text-center p-2">You are going to delete this invoice from database.</p>
+                                                                        <p class="text-center p-2">Deleting it will delete relevant entries from related tables.</p>
+                                                                        <p class="text-center p-2">This process can not be undone.</p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<!--                                                                        <button type="button" class="btn btn-primary">Send <i class="fab fa-bs-telegram-plane ms-1"></i></button>-->
+                                                                        <a href="{% url 'delete-invoice' order_no=item.order_no %}"
+                                           class="btn btn-danger">Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <!-- Modal end-->
+
+                                                        </td>
+                                            </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->
+
+
+                        <!-- end row-->
+                        <!-- end row-->
+                        <!-- end row-->
+                        <!-- end row-->
+                        <!-- end row-->
+                        <!-- end row-->
+
+<script>
+    $(document).ready(function() {
+    $('#datatable').DataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+</script>
+
+
+
+{% endblock content %}
+
+{% block extra_javascript %}
+        <!-- Required datatable js -->
+        <script src="{% static 'libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+        <!-- Buttons examples -->
+        <script src="{% static 'libs/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js' %}"></script>
+        <script src="{% static 'libs/jszip/jszip.min.js' %}"></script>
+        <script src="{% static 'libs/pdfmake/build/pdfmake.min.js' %}"></script>
+        <script src="{% static 'libs/pdfmake/build/vfs_fonts.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-buttons/js/buttons.colVis.min.js' %}"></script>
+
+        <script src="{% static 'libs/datatables.net-keytable/js/dataTables.keyTable.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-select/js/dataTables.select.min.js' %}"></script>
+
+        <!-- Responsive examples -->
+        <script src="{% static 'libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+        <script src="{% static 'libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+
+        <!-- Datatable init js -->
+        <script src="{% static 'js/pages/datatables.init.js' %}"></script>
+
+
+{% endblock extra_javascript %}

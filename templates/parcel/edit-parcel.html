@@ -1,0 +1,231 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block extra_css %}
+        <!-- DataTables -->
+        <link href="{% static 'libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'libs/datatables.net-autoFill-bs4/css/autoFill.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'libs/datatables.net-keytable-bs4/css/keyTable.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+        <!-- Responsive datatable examples -->
+        <link href="{% static 'libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+{% endblock extra_css %}
+
+{% block content %}
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form method="post" id="personForm" data-district-url="{% url 'ajax_load_district' %}" novalidate>
+                                            {% csrf_token %}
+                                            <div class="row">
+                                                <div class="col-6 border border-danger">
+                                                    <h3 class="text-center p-1 mb-2 mt-2 bg-danger text-white">From</h3>
+                                                    <div class="row">
+                                                        <div class="col-6 mb-3">
+                                                            <label class="form-label" class="control-label">Name</label>
+                                                            {{ form.name }}
+                                                         </div>
+                                                        <div class=" col-6 mb-3">
+                                                            <label class="form-label" class="control-label">Company</label>
+                                                            {{ form.company }}
+
+                                                         </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 mb-3">
+                                                             <label class="form-label">Select Division</label>
+                                                            {{ form.division }}
+                                                         </div>
+                                                        <div class=" col-4 mb-3">
+                                                             <label class="form-label">Select District</label>
+                                                             {{ form.district }}
+                                                         </div>
+                                                        <div class=" col-4 mb-3">
+                                                             <label class="form-label">Select Thana</label>
+                                                             {{ form.sub }}
+                                                         </div>
+                                                    </div>
+                                                    <div class="form-group mb-3">
+                                                        <label class="form-label">Village/Town/Road/Flat</label>
+                                                        {{ form.s_village }}
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-4 mb-3">
+                                                            <label class="form-label">Phone</label>
+                                                            {{ form.s_phone }}
+                                                        </div>
+                                                        <div class="form-group col-4 mb-3">
+                                                            <label class="form-label">Nid</label>
+                                                            {{ form.nid }}
+                                                        </div>
+
+                                                        <div class=" col-4 mb-3">
+                                                             <label class="form-label" class="control-label">Select Type</label>
+                                                            {{ form.type }}
+                                                         </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="form-group mb-3">
+                                                                <label>Order Number</label>
+                                                                {{ form.order_no }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="form-group mb-3">
+                                                                <label>Reference</label>
+                                                                {{ form.reference }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="form-group mb-3">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="form-group mb-3">
+                                                                <label>Price</label>
+                                                                {{ form.price }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="form-group mb-3">
+                                                                <label>Quantity</label>
+                                                                {{ form.quantity }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="form-group mb-3">
+                                                                 <label>Total</label>
+                                                                {{ form.total }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <!--to start-->
+                                                <div class="col-6 border border-danger">
+
+                                                    <h3 class="text-center p-1 mb-2 mt-2 bg-danger text-white">To</h3>
+                                                    <div class="row">
+                                                        <div class="col-6 mb-3">
+                                                            <label>Name</label>
+                                                            {{ form.receiver }}
+                                                         </div>
+                                                        <div class=" col-6 mb-3">
+                                                            <label>Company</label>
+                                                            {{ form.r_company }}
+                                                         </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 mb-3">
+                                                             <label class="form-label" class="control-label">Select Division</label>
+                                                             {{ form.div }}
+                                                         </div>
+                                                        <div class=" col-4 mb-3">
+                                                             <label class="form-label" class="control-label">Select District</label>
+                                                             {{ form.dis }}
+                                                         </div>
+                                                        <div class=" col-4 mb-3">
+                                                             <label class="form-label" class="control-label">Select Thana</label>
+                                                             {{ form.tha }}
+                                                         </div>
+                                                    </div>
+                                                    <div class="form-group mb-3">
+                                                        <label>Village/Town/Road/Flat</label>
+                                                        {{ form.r_village}}
+                                                    </div>
+                                                    <div class="form-group col-4 mb-3">
+                                                        <label>Phone</label>
+                                                        {{ form.r_phone}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-danger mt-2">Update</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_division").change(function () {
+      var url = $("#personForm").attr("data-district-url");  // get the url of the `load_cities` view
+      var divisionId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: '{% url 'ajax_load_district' %}',                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'division': divisionId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_district").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+    // this one is for fetching sub-district data
+    $("#id_district").change(function () { //django-model-form created this id
+      var url = $("#personForm").attr("data-district-url");  // get the url of the `load_cities` view
+      var districtId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: '{% url 'ajax_load_sub' %}',                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/) person_form.html template has this url var
+        data: {
+          'district': districtId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_sub").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+
+    $("#id_div").change(function () {
+      var url = $("#personForm").attr("data-district-url");  // get the url of the `load_cities` view
+      var divisionId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: '{% url 'ajax_load_district' %}',                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'division': divisionId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_dis").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+    // this one is for fetching vanue data
+    $("#id_dis").change(function () { //django-model-form created this id
+      var url = $("#personForm").attr("data-district-url");  // get the url of the `load_cities` view
+      var districtId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: '{% url 'ajax_load_sub' %}',                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/) person_form.html template has this url var
+        data: {
+          'district': districtId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_tha").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+
+
+
+  </script>
+{% endblock content %}
+
+{% block extra_javascript %}
+        <!-- Table Editable plugin -->
+        <script src="{% static 'libs/table-edits/build/table-edits.min.js' %}"></script>
+
+        <script src="{% static 'js/pages/table-editable.init.js' %}"></script>
+{% endblock extra_javascript %}

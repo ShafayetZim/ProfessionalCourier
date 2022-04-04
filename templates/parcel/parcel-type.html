@@ -1,0 +1,66 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block extra_css %}
+        <!-- DataTables -->
+        <link href="{% static 'libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'libs/datatables.net-autoFill-bs4/css/autoFill.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'libs/datatables.net-keytable-bs4/css/keyTable.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+        <!-- Responsive datatable examples -->
+        <link href="{% static 'libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+{% endblock extra_css %}
+
+{% block content %}
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="">
+                                            <a href="{% url 'new-parcel-type' %}" class="btn btn-danger mb-2"><i class="mdi mdi-plus me-2"></i> New type</a>
+                                        </div>
+
+                                        <div class="table-responsive mt-3">
+                                            <table class="table table-editable table-nowrap align-middle table-edits">
+                                                <thead>
+                                                    <tr>
+                                                        <th>SL</th>
+                                                        <th>Type</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for item in type %}
+                                                    <tr data-id="1">
+                                                        <td data-field="sl" style="">{{forloop.counter}}</td>
+                                                        <td data-field="name">{{item.name}}</td>
+                                                        <td style="">
+                                                            <a href="{% url 'edit-type' item.id %}">
+                                                                <button class="btn btn-outline-info">
+                                                                    <i class="fas fa-pencil-alt"></i>
+                                                                </button>
+                                                            </a>
+                                                            <a href="{% url 'delete-type' item.id %}">
+                                                                <button class="btn btn-outline-danger">
+                                                                    <i class="mdi mdi-trash-can"></i>
+                                                                </button>
+                                                            </a>
+
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->
+{% endblock content %}
+
+{% block extra_javascript %}
+        <!-- Table Editable plugin -->
+        <script src="{% static 'libs/table-edits/build/table-edits.min.js' %}"></script>
+
+        <script src="{% static 'js/pages/table-editable.init.js' %}"></script>
+{% endblock extra_javascript %}

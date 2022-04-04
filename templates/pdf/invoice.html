@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px dotted black;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: white;
+  font-size: 14px;
+  padding-top: 2px;
+}
+</style>
+</head>
+<body>
+
+<div class="center" style="text-align: left;">
+    <p>Office Copy</p>
+
+    <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
+        <tbody>
+        <tr style="border-style: hidden; height: 20px;">
+            <td style="width: 75.7668%; border-style: hidden;"><strong>Invoice no: {{parcel.order_no}}</strong></td>
+            <td style="width: 24.2332%; border-style: hidden;"><strong>Date: {{parcel.date}}</strong></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+<table border=1>
+      <tr>
+        <td style="width: 15.4664%;"></td>
+        <th style="width: 36.7668%;">Sender</th>
+        <th style="width: 36.7668%;">Receiver</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td style="text-align: center;">{{ parcel.name }}</td>
+        <td style="text-align: center;">{{ parcel.receiver }}</td>
+      </tr>
+      <tr>
+        <th>Company</th>
+        <td style="text-align: center;">{{ parcel.company }}</td>
+        <td style="text-align: center;">{{ parcel.r_company }}</td>
+      </tr>
+      <tr>
+        <th>Division</th>
+        <td style="text-align: center;">{{ parcel.division }}</td>
+        <td style="text-align: center;">{{ parcel.div }}</td>
+      </tr>
+      <tr>
+        <th>District</th>
+        <td style="text-align: center;">{{ parcel.district }}</td>
+        <td style="text-align: center;">{{ parcel.dis }}</td>
+      </tr>
+      <tr>
+        <th>Thana</th>
+        <td style="text-align: center;">{{ parcel.sub }}</td>
+        <td style="text-align: center;">{{ parcel.tha }}</td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td style="text-align: center;">{{ parcel.s_village }}</td>
+        <td style="text-align: center;">{{ parcel.r_village }}</td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td style="text-align: center;">{{ parcel.s_phone }}</td>
+        <td style="text-align: center;">{{ parcel.r_phone }}</td>
+      </tr>
+    </table>
+</div>
+<br>
+<div class="center" style="text-align: left;">
+
+    <table style="height: 18px; width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
+        <tbody>
+        <tr style="height: 20px; border-style: hidden;">
+            <td style="width: 75.7668%; border-style: hidden;"><strong>Parcel Type: {{parcel.type}}</strong></td>
+            <td style="width: 24.2332%; border-style: hidden;"><strong>Price: {{parcel.price}} Taka</strong></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<br><br><br>
+
+<!--Sender copy-->
+
+<div class="center" style="text-align: left;">
+    <p>Sender Copy</p>
+
+    <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
+        <tbody>
+        <tr style="border-style: hidden; height: 20px;">
+            <td style="width: 75.7668%; border-style: hidden;"><strong>Invoice no: {{parcel.order_no}}</strong></td>
+            <td style="width: 24.2332%; border-style: hidden;"><strong>Date: {{parcel.date}}</strong></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+<table border=1>
+      <tr>
+        <td style="width: 15.4664%;"></td>
+        <th style="width: 36.7668%;">Sender</th>
+        <th style="width: 36.7668%;">Receiver</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td style="text-align: center;">{{ parcel.name }}</td>
+        <td style="text-align: center;">{{ parcel.receiver }}</td>
+      </tr>
+      <tr>
+        <th>Company</th>
+        <td style="text-align: center;">{{ parcel.company }}</td>
+        <td style="text-align: center;">{{ parcel.r_company }}</td>
+      </tr>
+      <tr>
+        <th>Division</th>
+        <td style="text-align: center;">{{ parcel.division }}</td>
+        <td style="text-align: center;">{{ parcel.div }}</td>
+      </tr>
+      <tr>
+        <th>District</th>
+        <td style="text-align: center;">{{ parcel.district }}</td>
+        <td style="text-align: center;">{{ parcel.dis }}</td>
+      </tr>
+      <tr>
+        <th>Thana</th>
+        <td style="text-align: center;">{{ parcel.sub }}</td>
+        <td style="text-align: center;">{{ parcel.tha }}</td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td style="text-align: center;">{{ parcel.s_village }}</td>
+        <td style="text-align: center;">{{ parcel.r_village }}</td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td style="text-align: center;">{{ parcel.s_phone }}</td>
+        <td style="text-align: center;">{{ parcel.r_phone }}</td>
+      </tr>
+    </table>
+</div>
+<br>
+<div class="center" style="text-align: left;">
+
+    <table style="height: 18px; width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
+        <tbody>
+        <tr style="height: 20px; border-style: hidden;">
+            <td style="width: 75.7668%; border-style: hidden;"><strong>Parcel Type: {{parcel.type}}</strong></td>
+            <td style="width: 24.2332%; border-style: hidden;"><strong>Price: {{parcel.price}} Taka</strong></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<br><br><br>
+
+<!--Receiver copy-->
+
+<div class="center" style="text-align: left;">
+    <p>Receiver Copy</p>
+
+    <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
+        <tbody>
+        <tr style="border-style: hidden; height: 20px;">
+            <td style="width: 75.7668%; border-style: hidden;"><strong>Invoice no: {{parcel.order_no}}</strong></td>
+            <td style="width: 24.2332%; border-style: hidden;"><strong>Date: {{parcel.date}}</strong></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+<table border=1>
+      <tr>
+        <td style="width: 15.4664%;"></td>
+        <th style="width: 36.7668%;">Sender</th>
+        <th style="width: 36.7668%;">Receiver</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td style="text-align: center;">{{ parcel.name }}</td>
+        <td style="text-align: center;">{{ parcel.receiver }}</td>
+      </tr>
+      <tr>
+        <th>Company</th>
+        <td style="text-align: center;">{{ parcel.company }}</td>
+        <td style="text-align: center;">{{ parcel.r_company }}</td>
+      </tr>
+      <tr>
+        <th>Division</th>
+        <td style="text-align: center;">{{ parcel.division }}</td>
+        <td style="text-align: center;">{{ parcel.div }}</td>
+      </tr>
+      <tr>
+        <th>District</th>
+        <td style="text-align: center;">{{ parcel.district }}</td>
+        <td style="text-align: center;">{{ parcel.dis }}</td>
+      </tr>
+      <tr>
+        <th>Thana</th>
+        <td style="text-align: center;">{{ parcel.sub }}</td>
+        <td style="text-align: center;">{{ parcel.tha }}</td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td style="text-align: center;">{{ parcel.s_village }}</td>
+        <td style="text-align: center;">{{ parcel.r_village }}</td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td style="text-align: center;">{{ parcel.s_phone }}</td>
+        <td style="text-align: center;">{{ parcel.r_phone }}</td>
+      </tr>
+    </table>
+</div>
+<br>
+<div class="center" style="text-align: left;">
+
+    <table style="height: 18px; width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
+        <tbody>
+        <tr style="height: 20px; border-style: hidden;">
+            <td style="width: 75.7668%; border-style: hidden;"><strong>Parcel Type: {{parcel.type}}</strong></td>
+            <td style="width: 24.2332%; border-style: hidden;"><strong>Price: {{parcel.price}} Taka</strong></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
