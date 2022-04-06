@@ -8,6 +8,7 @@ from io import BytesIO
 from django.core.files import File
 
 
+# parcel type
 class Type(models.Model):
     name = models.CharField(max_length=100)
 
@@ -15,6 +16,7 @@ class Type(models.Model):
         return self.name
 
 
+# Division
 class Division(models.Model):
     name = models.CharField(max_length=30)
 
@@ -22,6 +24,7 @@ class Division(models.Model):
         return self.name
 
 
+# District
 class District(models.Model):
     division = models.ForeignKey(Division, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
@@ -30,6 +33,7 @@ class District(models.Model):
         return self.name
 
 
+# Sub-District
 class Sub(models.Model):
     name = models.CharField(max_length=30)
     district = models.ForeignKey(District, on_delete=models.CASCADE)
@@ -53,7 +57,7 @@ def order_no_generate():
     last_order_no = Parcel.objects.filter(order_no__startswith=prefix).order_by('order_no').last()
 
     if last_order_no:
-        # Cut 4 digit from the Right and converted to int (STC-YY-MM-:xxxx)
+        # Cut 4 digit from the Right and converted to int (TPC-YY-MM-:xxxx)
         last_order_four_digit = int(last_order_no.order_no[-4:])
 
         # Increment one with last five digit
@@ -63,6 +67,7 @@ def order_no_generate():
     return prefix + next_order_no
 
 
+# parcel form
 class Parcel(models.Model):
     STATUS_CHOICES = (
         ('1', 'Picked'),
@@ -71,22 +76,25 @@ class Parcel(models.Model):
         ('4', 'Out For Delivery'),
         ('5', 'Delivered'),
     )
+    # sender details
     name = models.CharField(max_length=100)
     company = models.CharField(max_length=100, null=True, blank=True)
-    division = models.ForeignKey(Division, on_delete=models.SET_NULL, null=True, related_name='div1')
-    district = models.ForeignKey(District, on_delete=models.SET_NULL, null=True, related_name='dis1')
-    sub = models.ForeignKey(Sub, on_delete=models.SET_NULL, null=True, related_name='sub1')
+    division = models.ForeignKey(Division, on_delete=models.SET_NULL, null=True, related_name='div1')  # division
+    district = models.ForeignKey(District, on_delete=models.SET_NULL, null=True, related_name='dis1')  # district
+    sub = models.ForeignKey(Sub, on_delete=models.SET_NULL, null=True, related_name='sub1')  # sub-district
     s_village = models.CharField(max_length=100)
     s_phone = models.CharField(max_length=100)
     nid = models.CharField(max_length=100, null=True, blank=True)
     reference = models.CharField(max_length=100, null=True, blank=True)
+    # receiver details
     receiver = models.CharField(max_length=100)
     r_company = models.CharField(max_length=100, null=True, blank=True)
-    div = models.ForeignKey(Division, on_delete=models.SET_NULL, null=True, related_name='div2')
-    dis = models.ForeignKey(District, on_delete=models.SET_NULL, null=True, related_name='dis2')
-    tha = models.ForeignKey(Sub, on_delete=models.SET_NULL, null=True, related_name='sub2')
+    div = models.ForeignKey(Division, on_delete=models.SET_NULL, null=True, related_name='div2')  # division
+    dis = models.ForeignKey(District, on_delete=models.SET_NULL, null=True, related_name='dis2')  # district
+    tha = models.ForeignKey(Sub, on_delete=models.SET_NULL, null=True, related_name='sub2')  # sub-district
     r_village = models.CharField(max_length=100)
     r_phone = models.CharField(max_length=100)
+    # order details
     type = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True)
     date = models.DateField(default=timezone.now)
     order_no = models.CharField(max_length=200, primary_key=True, default=order_no_generate)
@@ -101,9 +109,10 @@ class Parcel(models.Model):
     def __str__(self):
         return self.order_no
 
+    # barcode generator
     def save(self, *args, **kwargs):
-        EAN = barcode.get_barcode_class('ean13')
-        ean = EAN(f'00{self.order_no}', writer=ImageWriter())
+        EAN = barcode.get_barcode_class('code128')
+        ean = EAN(f'{self.order_no}', writer=ImageWriter())
         buffer = BytesIO()
         ean.write(buffer)
         self.barcode.save('barcode.png', File(buffer), save=False)
