@@ -170,7 +170,7 @@ def print_invoice(request, order_no):
     return HttpResponse(pdf, content_type='application/pdf')
 
 
-# Edit parcel
+# track parcel
 class TrackingView(LoginRequiredMixin, UpdateView):
     model = Parcel
     form_class = TrackingForm
