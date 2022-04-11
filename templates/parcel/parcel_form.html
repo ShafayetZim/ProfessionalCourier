@@ -70,20 +70,9 @@
                                                          </div>
                                                     </div>
 
-                                                    <div class="row">
-                                                        <div class="col-4">
-                                                            <div class="form-group mb-3">
-                                                                <label>Order Number</label>
-                                                                {{ form.order_no }}
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-4">
-                                                            <div class="form-group mb-3">
-                                                                 <label>Reference</label>
-                                                                {{ form.reference }}
-                                                            </div>
-                                                        </div>
+                                                    <div class="form-group mb-3">
+                                                        <label class="form-label">Description</label>
+                                                        {{ form.description }}
                                                     </div>
 
                                                     <div class="row">
@@ -106,6 +95,31 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="form-group mb-3">
+                                                                <label>Cod Amount</label>
+                                                                {{ form.cod_amount }}
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-4">
+                                                            <div class="form-group mb-3">
+                                                                <label>Order Number</label>
+                                                                {{ form.order_no }}
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-4">
+                                                            <div class="form-group mb-3">
+                                                                 <label>Reference</label>
+                                                                {{ form.reference }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
                                                 </div>
                                             <!--to start-->
                                                 <div class="col-6 border border-danger">
@@ -144,6 +158,8 @@
                                                         {{ form.r_phone}}
                                                     </div>
                                                 </div>
+                                                <!--to end-->
+
                                             </div>
                                             <div class="text-center">
                                                 <button type="submit" class="btn btn-danger btn-lg mt-2">Submit</button>
