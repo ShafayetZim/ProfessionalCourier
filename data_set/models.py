@@ -104,6 +104,7 @@ class Parcel(models.Model):
     quantity = models.IntegerField(null=True, blank=True, default=1)
     total = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
     cod_amount = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    payable = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
     tracking = models.CharField(max_length=20, choices=STATUS_CHOICES, default=1)
     status = models.CharField(max_length=20, default="Open")
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)

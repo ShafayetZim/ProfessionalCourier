@@ -18,7 +18,7 @@ class ParcelForm(forms.ModelForm):
         model = Parcel
         fields = ('name', 'company', 'division', 'district', 'sub', 's_village', 's_phone', 'nid',
                   'reference', 'receiver', 'r_company', 'div', 'dis', 'tha', 'r_village', 'r_phone',
-                  'type', 'description', 'price', 'quantity', 'total', 'cod_amount', 'order_no',)
+                  'type', 'description', 'price', 'quantity', 'total', 'cod_amount', 'payable', 'order_no',)
 
         widgets = {
             'name': forms.TextInput(attrs={'required': True, 'class': 'form-control'}),
@@ -42,7 +42,8 @@ class ParcelForm(forms.ModelForm):
             'price': forms.NumberInput(attrs={'class': 'form-control', 'id': 'id_price', 'oninput': 'myFunction()'}),
             'quantity': forms.NumberInput(attrs={'class': 'form-control', 'id': 'id_quantity', 'oninput': 'myFunction()'}),
             'total': forms.NumberInput(attrs={'class': 'form-control', 'id': 'id_total', }),
-            'cod_amount': forms.NumberInput(attrs={'class': 'form-control', }),
+            'cod_amount': forms.NumberInput(attrs={'class': 'form-control', 'id': 'id_cod', 'oninput': 'myFunction()'}),
+            'payable': forms.NumberInput(attrs={'class': 'form-control', 'id': 'id_pay',}),
             'order_no': forms.TextInput(attrs={'required': True, 'class': 'form-control'}),
 
         }

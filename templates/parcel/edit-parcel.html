@@ -65,9 +65,19 @@
                                                          </div>
                                                     </div>
 
-                                                    <div class="form-group mb-3">
-                                                        <label class="form-label">Description</label>
-                                                        {{ form.description }}
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <div class="form-group mb-3">
+                                                                <label class="form-label">Description</label>
+                                                                {{ form.description }}
+                                                            </div>
+                                                        </div>
+                                                         <div class="col-4">
+                                                            <div class="form-group mb-3">
+                                                                <label class="form-label">Order Number</label>
+                                                                {{ form.order_no }}
+                                                            </div>
+                                                        </div>
                                                     </div>
 
                                                     <div class="row">
@@ -100,8 +110,8 @@
                                                         </div>
                                                         <div class="col-4">
                                                             <div class="form-group mb-3">
-                                                                <label>Order Number</label>
-                                                                {{ form.order_no }}
+                                                                <label>Total Receivable</label>
+                                                                {{ form.payable }}
                                                             </div>
                                                         </div>
                                                         <div class="col-4">
