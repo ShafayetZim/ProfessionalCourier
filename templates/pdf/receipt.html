@@ -43,29 +43,29 @@ td {
     <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
         <tbody>
         <tr style="border-style: hidden;">
-            <th style="width: 25%;  height:78px;"><img class="" src="../static/images/pdf-logo.png" alt="Header Avatar" width="700" height="100"></th>
-            <th style="width: 24%;  height:78px; font-size:10px; text-align: justify; padding-left:2px;">KA-74/1, Progati Sarani, Kuril Chowrasta, Vatara, Dhaka-1229.
+            <th style="width: 24%;  height:78px;"><img class="" src="../static/images/pdf-logo.png" alt="Header Avatar" width="700" height="100"></th>
+            <th style="width: 24%;  height:78px; font-size:11px; text-align: justify; padding-left:2px;">KA-74/1, Progati Sarani, Kuril Chowrasta, Vatara, Dhaka-1229.
                 Tel : 88-02-8411515 / 02-8411575, Mob : 01708-388733, E-mail : info@tpc-bd.org Web : www.tpc-bd.org</th>
-            <td style="width: 51%;  height:78px; text-align: center; border-left: 1px solid white; padding-top: 0px;">
+            <td style="width: 52%;  height:78px; text-align: center; border-left: 1px solid white; padding-top: 0px;">
                 <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
                     <tbody>
                     <tr>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">From:</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.district }}</td>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">To:</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.dis }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">From:</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.district }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">To:</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.dis }}</td>
                     </tr>
                     <tr>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Booking Place</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.sub }}</td>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Delivery Place</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.tha }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Booking Place</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.sub }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Delivery Place</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.tha }}</td>
                     </tr>
                     <tr>
-                        <th style="width: 93px;  height:26px; font-size:10px;">Booking Date</th>
-                        <td style="width: 92px;  height:26px; font-size:10px;">{{parcel.date}}</td>
-                        <th style="width: 93px;  height:26px; font-size:10px;">Booked By</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{parcel.author}}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px;">Booking Date</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{parcel.date}}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px;">Booked By</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{parcel.author}}</td>
                     </tr>
                     </tbody>
 
@@ -126,19 +126,21 @@ td {
                 <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
                     <tbody>
                     <tr>
+                        <th style="width: 50%;  height:25px; font-size:10px; border-bottom: 3pt solid white;">Type:</th>
+                        <td style="width: 50%;  height:25px; font-size:10px;">{{ parcel.type }}</td>
                         <th style="width: 50%;  height:25px; font-size:10px; border-bottom: 3pt solid white;">Quantity:</th>
-                        <td style="width: 50%;  height:25px; font-size:10px;" colspan="2">{{ parcel.quantity }}</td>
-                        <th style="width: 50%;  height:25px; font-size:10px;">Type:</th>
-                        <td style="width: 50%;  height:25px; font-size:10px;" colspan="2">{{ parcel.type }}</td>
+                        <td style="width: 50%;  height:25px; font-size:10px;">{{ parcel.quantity }}</td>
+                        <th style="width: 50%;  height:25px; font-size:10px; border-bottom: 3pt solid white;">Unit Price:</th>
+                        <td style="width: 50%;  height:25px; font-size:10px;">{{ parcel.price }}</td>
 
                     </tr>
                     <tr>
-                        <th style="width: 33%;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Unit Price:</th>
-                        <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.price }}</td>
-                        <th style="width: 33%;  height:26px; font-size:10px;">Price:</th>
+                        <th style="width: 33%;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Price:</th>
                         <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.total }}</td>
                         <th style="width: 33%;  height:26px; font-size:10px;">Cod:</th>
                         <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.cod_amount }}</td>
+                        <th style="width: 33%;  height:26px; font-size:10px;">Receivable:</th>
+                        <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.payable }}</td>
                     </tr>
                     <tr>
                         <th style="width: 33%;  height:35px; font-size:10px;">Description</th>
@@ -187,29 +189,29 @@ td {
     <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
         <tbody>
         <tr style="border-style: hidden;">
-            <th style="width: 25%;  height:78px;"><img class="" src="../static/images/pdf-logo.png" alt="Header Avatar" width="700" height="100"></th>
-            <th style="width: 24%;  height:78px; font-size:10px; text-align: justify; padding-left:2px;">KA-74/1, Progati Sarani, Kuril Chowrasta, Vatara, Dhaka-1229.
+            <th style="width: 24%;  height:78px;"><img class="" src="../static/images/pdf-logo.png" alt="Header Avatar" width="700" height="100"></th>
+            <th style="width: 24%;  height:78px; font-size:11px; text-align: justify; padding-left:2px;">KA-74/1, Progati Sarani, Kuril Chowrasta, Vatara, Dhaka-1229.
                 Tel : 88-02-8411515 / 02-8411575, Mob : 01708-388733, E-mail : info@tpc-bd.org Web : www.tpc-bd.org</th>
-            <td style="width: 51%;  height:78px; text-align: center; border-left: 1px solid white; padding-top: 0px;">
+            <td style="width: 52%;  height:78px; text-align: center; border-left: 1px solid white; padding-top: 0px;">
                 <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
                     <tbody>
                     <tr>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">From</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.district }}</td>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">To</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.dis }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">From</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.district }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">To</th>
+                        <td style="width: 9px;  height:26px; font-size:10px;">{{ parcel.dis }}</td>
                     </tr>
                     <tr>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Booking Place</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.sub }}</td>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Delivery Place</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.tha }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Booking Place</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.sub }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Delivery Place</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.tha }}</td>
                     </tr>
                     <tr>
-                        <th style="width: 93px;  height:26px; font-size:10px;">Booking Date</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{parcel.date}}</td>
-                        <th style="width: 93px;  height:26px; font-size:10px;">Booked By</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{parcel.author}}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px;">Booking Date</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{parcel.date}}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px;">Booked By</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{parcel.author}}</td>
                     </tr>
                     </tbody>
 
@@ -269,19 +271,21 @@ td {
                 <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
                     <tbody>
                     <tr>
+                        <th style="width: 50%;  height:24px; font-size:10px; border-bottom: 3pt solid white;">Type:</th>
+                        <td style="width: 50%;  height:24px; font-size:10px;">{{ parcel.type }}</td>
                         <th style="width: 50%;  height:24px; font-size:10px; border-bottom: 3pt solid white;">Quantity:</th>
-                        <td style="width: 50%;  height:24px; font-size:10px;" colspan="2">{{ parcel.quantity }}</td>
-                        <th style="width: 50%;  height:24px; font-size:10px;">Type:</th>
-                        <td style="width: 50%;  height:24px; font-size:10px;" colspan="2">{{ parcel.type }}</td>
+                        <td style="width: 50%;  height:24px; font-size:10px;">{{ parcel.quantity }}</td>
+                        <th style="width: 50%;  height:24px; font-size:10px; border-bottom: 3pt solid white;">Unit Price:</th>
+                        <td style="width: 50%;  height:24px; font-size:10px;">{{ parcel.price }}</td>
 
                     </tr>
                     <tr>
-                        <th style="width: 33%;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Unit Price:</th>
-                        <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.price }}</td>
-                        <th style="width: 33%;  height:26px; font-size:10px;">Price:</th>
+                        <th style="width: 33%;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Price:</th>
                         <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.total }}</td>
                         <th style="width: 33%;  height:26px; font-size:10px;">Cod:</th>
-                        <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.cod_amount }}</td>
+                        <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.cod_amount  }}</td>
+                        <th style="width: 33%;  height:26px; font-size:10px;">Receivable:</th>
+                        <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.payable }}</td>
                     </tr>
                     <tr>
                         <th style="width: 33%;  height:35px; font-size:10px;">Description</th>
@@ -317,29 +321,29 @@ td {
     <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
         <tbody>
         <tr style="border-style: hidden;">
-            <th style="width: 25%;  height:78px;"><img class="" src="../static/images/pdf-logo.png" alt="Header Avatar" width="700" height="100"></th>
-            <th style="width: 24%;  height:78px; font-size:10px; text-align: justify; padding-left:2px;">KA-74/1, Progati Sarani, Kuril Chowrasta, Vatara, Dhaka-1229.
+            <th style="width: 24%;  height:78px;"><img class="" src="../static/images/pdf-logo.png" alt="Header Avatar" width="700" height="100"></th>
+            <th style="width: 24%;  height:78px; font-size:11px; text-align: justify; padding-left:2px;">KA-74/1, Progati Sarani, Kuril Chowrasta, Vatara, Dhaka-1229.
                 Tel : 88-02-8411515 / 02-8411575, Mob : 01708-388733, E-mail : info@tpc-bd.org Web : www.tpc-bd.org</th>
-            <td style="width: 51%;  height:78px; text-align: center; border-left: 1px solid white; padding-top: 0px;">
+            <td style="width: 52%;  height:78px; text-align: center; border-left: 1px solid white; padding-top: 0px;">
                 <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
                     <tbody>
                     <tr>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">From</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.district }}</td>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">To</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.dis }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">From</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.district }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">To</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.dis }}</td>
                     </tr>
                     <tr>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Booking Place</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.sub }}</td>
-                        <th style="width: 93px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Delivery Place</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{ parcel.tha }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Booking Place</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.sub }}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Delivery Place</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{ parcel.tha }}</td>
                     </tr>
                     <tr>
-                        <th style="width: 93px;  height:26px; font-size:10px;">Booking Date</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{parcel.date}}</td>
-                        <th style="width: 93px;  height:26px; font-size:10px;">Booked By</th>
-                        <td style="width: 93px;  height:26px; font-size:10px;">{{parcel.author}}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px;">Booking Date</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{parcel.date}}</td>
+                        <th style="width: 92px;  height:26px; font-size:10px;">Booked By</th>
+                        <td style="width: 95px;  height:26px; font-size:10px;">{{parcel.author}}</td>
                     </tr>
                     </tbody>
 
@@ -399,19 +403,21 @@ td {
                 <table style="width: 100%; border-collapse: collapse; border-style: hidden;" border="0">
                     <tbody>
                     <tr>
+                        <th style="width: 50%;  height:25px; font-size:10px; border-bottom: 3pt solid white;">Type:</th>
+                        <td style="width: 50%;  height:25px; font-size:10px;">{{ parcel.type }}</td>
                         <th style="width: 50%;  height:25px; font-size:10px; border-bottom: 3pt solid white;">Quantity:</th>
-                        <td style="width: 50%;  height:25px; font-size:10px;" colspan="2">{{ parcel.quantity }}</td>
-                        <th style="width: 50%;  height:25px; font-size:10px;">Type:</th>
-                        <td style="width: 50%;  height:25px; font-size:10px;" colspan="2">{{ parcel.type }}</td>
+                        <td style="width: 50%;  height:25px; font-size:10px;">{{ parcel.quantity }}</td>
+                        <th style="width: 50%;  height:25px; font-size:10px; border-bottom: 3pt solid white;">Unit Price:</th>
+                        <td style="width: 50%;  height:25px; font-size:10px;">{{ parcel.price }}</td>
 
                     </tr>
                     <tr>
-                        <th style="width: 33%;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Unit Price:</th>
-                        <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.price }}</td>
-                        <th style="width: 33%;  height:26px; font-size:10px;">Price:</th>
+                        <th style="width: 33%;  height:26px; font-size:10px; border-bottom: 3pt solid white;">Price:</th>
                         <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.total }}</td>
                         <th style="width: 33%;  height:26px; font-size:10px;">Cod:</th>
                         <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.cod_amount }}</td>
+                        <th style="width: 33%;  height:26px; font-size:10px;">Receivable:</th>
+                        <td style="width: 33%;  height:26px; font-size:10px;">{{ parcel.payable }}</td>
                     </tr>
                     <tr>
                         <th style="width: 33%;  height:35px; font-size:10px;">Description</th>
